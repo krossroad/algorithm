@@ -54,7 +54,6 @@ class BalancedBST(object):
             else:
                 root = self.rotate_right_left(root)
 
-
         print "Balance-factor(post-balance)=%d" % self.balance_factor(root)
 
         return root
