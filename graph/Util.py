@@ -1,12 +1,15 @@
 class Vertex(object):
     def __init__(self, value):
         self.value = value
-        self.adjacent_vertices = []
+        self.neighbours = []
         self.visited = False
 
-    def add_vertex(self, vertex):
-        self.adjacent_vertices.append(vertex)
+    def add_neighbour(self, vertex):
+        self.neighbours.append(vertex)
         return self
+
+    def __str__(self):
+        return str(self.value)
 
 
 class Edge(object):
