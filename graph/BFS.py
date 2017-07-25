@@ -10,7 +10,7 @@ def bfs(start):
         vertex = queue.de_queue()
         print vertex
 
-        for neighbour in vertex.neighbours:
+        for index, neighbour in vertex.neighbours.items():
             if neighbour.visited:
                 continue
 
