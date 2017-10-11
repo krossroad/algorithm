@@ -7,11 +7,11 @@ from graph.DFS import dfs
 def run_dijkstra():
     print 'Dijkstra\'s algorithm.'
     graph = Graph()
-    graph.add_edge_raw('A', 'C', 8)\
-        .add_edge_raw('A', 'B', 2)\
-        .add_edge_raw('B', 'D', 10)\
-        .add_edge_raw('D', 'C', 1)\
-        .add_edge_raw('D', 'E', 1)\
+    graph.add_edge_raw('A', 'C', 8) \
+        .add_edge_raw('A', 'B', 2) \
+        .add_edge_raw('B', 'D', 10) \
+        .add_edge_raw('D', 'C', 1) \
+        .add_edge_raw('D', 'E', 1) \
         .add_edge_raw('C', 'E', 8)
     calculate_shortest_path(graph, graph.vertices['A'], graph.vertices['E'])
 
@@ -29,6 +29,10 @@ def run_bfs():
     vertex2.add_neighbour(vertex3)
 
     bfs(vertex1)
+
+
+def run_kruksal():
+    pass
 
 
 def run_dfs():
@@ -51,7 +55,8 @@ if __name__ == '__main__':
         print "Which algorithm to test?"
         print "1) BFS"
         print "2) DFS"
-        print "3) Dijkstra's Shortest Path."
+        print "3) Dijkstra's Shortest Path"
+        print "4) Kruksal's Minimum Spanning Tree"
 
         try:
             option = int(raw_input())
@@ -67,8 +72,12 @@ if __name__ == '__main__':
         elif option == 3:
             run_dijkstra()
 
+        elif option == 4:
+            run_kruksal()
+
         else:
             print "Invalid option selected!!"
             wrapper()
+
 
     wrapper()

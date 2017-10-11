@@ -30,7 +30,7 @@ class Vertex(object):
 
 class DistanceTable(object):
     def __init__(self, vertices):
-        #to-do This distance-table initialization could be optimized
+        # to-do This distance-table initialization could be optimized
         self.vertices = {x: DistanceInfo(x) for x, y in vertices.items()}
         self.queued_vertices = {x: True for x in vertices}
         self.queue = [DistanceInfo(x) for y, x in vertices.items()]

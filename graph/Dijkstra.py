@@ -1,5 +1,3 @@
-import heapq
-
 from graph.Util import DistanceInfo, DistanceTable
 
 
@@ -7,7 +5,7 @@ def calculate_shortest_path(graph, starting_vertex, target_vertex):
     queue = []
 
     distance_table = DistanceTable(graph.vertices)
-    info = DistanceInfo(starting_vertex, 0) #set starting vertex as 0
+    info = DistanceInfo(starting_vertex, 0)  # set starting vertex as 0
 
     distance_table.push(info)
 
