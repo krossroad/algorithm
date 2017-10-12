@@ -13,20 +13,6 @@ def get_stair_cases_naive(n):
            + get_stair_cases_naive(n - 2)
 
 
-class TestGetStaircaseNaive(unittest.TestCase):
-    def test_should_run(self):
-        get_stair_cases_naive(0)
-
-    def test_should_return_zero_for_n_zero(self):
-        self.assertEquals(0, get_stair_cases_naive(0))
-
-    def test_should_return_valid_possible_steps(self):
-        self.assertEquals(1, get_stair_cases_naive(1))
-        self.assertEquals(5, get_stair_cases_naive(4))
-        self.assertEquals(8, get_stair_cases_naive(5))
-        self.assertEquals(13, get_stair_cases_naive(6))
-
-
 def get_stair_cases_dp(n):
     if n <= 0:
         return 0
@@ -44,6 +30,20 @@ def get_stair_cases_dp(n):
         current = next_val
 
     return previous + current
+
+
+class TestGetStaircaseNaive(unittest.TestCase):
+    def test_should_run(self):
+        get_stair_cases_naive(0)
+
+    def test_should_return_zero_for_n_zero(self):
+        self.assertEquals(0, get_stair_cases_naive(0))
+
+    def test_should_return_valid_possible_steps(self):
+        self.assertEquals(1, get_stair_cases_naive(1))
+        self.assertEquals(5, get_stair_cases_naive(4))
+        self.assertEquals(8, get_stair_cases_naive(5))
+        self.assertEquals(13, get_stair_cases_naive(6))
 
 
 class TestGetStairCaseDp(unittest.TestCase):
