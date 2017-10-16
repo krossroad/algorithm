@@ -1,27 +1,10 @@
 import unittest
 
-
-def knapsack_naive(values, weights, W):
-    if W <= 0 or len(values) == 0 or len(weights) == 0:
-        return 0
-
-    value = values[0]
-    weight = weights[0]
-    values = values[1:]
-    weights = weights[1:]
-
-    print "W=%d, we=%d" % (W, weight)
-
-    value_including = (value + knapsack_naive(values, weights, W - weight)) if W >= weight else 0
-    value_excluding = knapsack_naive(values, weights, W)
-    print "Value including=%d" % value_including
-    print "Value excluding=%d" % value_excluding
-
-    return max(value_including, value_excluding)
+from DynamicProgramming.Knapsack import knapsack_naive
 
 
 class KnapsackNaiveTest(unittest.TestCase):
-    def test_should_run(self, args=None):
+    def test_should_run(self):
         knapsack_naive([], [], 0)
 
     def test_should_return_zero_for_zero(self):
