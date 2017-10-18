@@ -30,3 +30,13 @@ def subset_sum_dp(sequence, S):
                 T[index_i][index_j] = T[index_i - 1][index_j]
 
     return T[rows - 1][cols - 1]
+
+
+def array_partition_dp(sequence):
+    if len(sequence) == 0:
+        return False
+
+    seq_size = len(sequence)
+    seq_sum = sum(sequence)
+
+    return not (seq_sum & 1) and subset_sum_dp(sequence, seq_size / 2)
