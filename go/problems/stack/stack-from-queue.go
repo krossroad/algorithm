@@ -1,9 +1,10 @@
-package main
+package stack
 
 import (
 	"algorithm/go/queue"
-	"fmt"
 )
+
+const stackSize = 10
 
 type MyStack struct {
 	queue1 queue.Queue
@@ -13,8 +14,8 @@ type MyStack struct {
 /** Initialize your data structure here. */
 func Constructor() MyStack {
 	return MyStack{
-		queue1: queue.Construct(10),
-		queue2: queue.Construct(10),
+		queue1: queue.Construct(stackSize),
+		queue2: queue.Construct(stackSize),
 	}
 }
 
@@ -32,28 +33,21 @@ QueueScanner:
 	}
 
 	this.queue1 = this.queue2
-	this.queue2 = queue.Queue{}
+	this.queue2 = queue.Construct(stackSize)
 }
 
 /** Removes the element on top of the stack and returns that element. */
-func (this *MyStack) Pop() int {
+func (this *MyStack) Pop() interface{} {
 	value, _ := this.queue1.Dequeue()
 	return value
 }
 
 /** Get the top element. */
-func (this *MyStack) Top() int {
+func (this *MyStack) Top() interface{} {
 	return this.queue1.First()
 }
 
 /** Returns whether the stack is empty. */
 func (this *MyStack) Empty() bool {
 	return this.queue1.IsEmpty()
-}
-
-func main() {
-	obj := Constructor()
-
-	obj.Push(22)
-	fmt.Println(obj.Empty(), obj.Pop(), obj.Empty())
 }
