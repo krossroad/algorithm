@@ -1,4 +1,4 @@
-package tests
+package problems
 
 import (
 	"algorithm/go/problems"
