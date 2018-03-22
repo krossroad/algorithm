@@ -19,3 +19,13 @@ func SubtractionWithooutMinusOperator(a int, b int) int {
 
 	return a
 }
+
+func UniqueElement(coll []int) int {
+	sum := 0
+
+	for _, num := range coll {
+		sum = sum ^ num
+	}
+
+	return sum
+}
