@@ -9,7 +9,7 @@ func Construct(capacity int) Stack {
 	return Stack{
 		capacity:   capacity,
 		size:       0,
-		top:        0,
+		top:        -1,
 		collection: make([]interface{}, capacity),
 	}
 }
@@ -19,6 +19,7 @@ func (this *Stack) Push(value interface{}) *Stack {
 		panic("Stack-overflow")
 	}
 	this.top++
+	this.size++
 	this.collection[this.top] = value
 
 	return this
@@ -28,6 +29,7 @@ func (this *Stack) Pop() interface{} {
 	if !this.IsEmpty() {
 		value := this.collection[this.top]
 		this.top--
+		this.size--
 
 		return value
 	}
