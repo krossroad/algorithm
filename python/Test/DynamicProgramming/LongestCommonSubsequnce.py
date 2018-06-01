@@ -14,6 +14,7 @@ class LongestCommonSubSequenceNaiveTest(unittest.TestCase):
 
     def test_should_return_correct_sub_sequence_length(self):
         self.assertEquals(4, calc_longest_common_sub_sequence_naive("ABAZDC", "BACBAD"))
+        self.assertEquals(5, calc_longest_common_sub_sequence_naive("XYXZZYXZ", "XYZXXZ"))
 
 
 class LongestCommonSubSequenceDpTest(unittest.TestCase):
@@ -26,3 +27,6 @@ class LongestCommonSubSequenceDpTest(unittest.TestCase):
 
     def test_should_return_correct_sub_sequence_length(self):
         self.assertEquals(4, calc_longest_common_sub_sequence_dp("ABAZDC", "BACBAD"))
+
+if __name__ == '__main__':
+    unittest.main()
