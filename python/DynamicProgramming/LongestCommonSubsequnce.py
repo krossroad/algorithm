@@ -20,7 +20,7 @@ def calc_longest_common_sub_sequence_dp(seq1, seq2):
 
     for i in xrange(1, size2 + 1):
         for j in xrange(1, size1 + 1):
-            P[i][j] = (1 + P[i - 1][j - 1]) if seq1[i - 1] == seq2[j - 1] \
+            P[i][j] = (1 + P[i - 1][j - 1]) if seq2[i - 1] == seq1[j - 1] \
                 else max(P[i - 1][j], P[i][j - 1])
 
     return P[size2][size1]

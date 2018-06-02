@@ -27,8 +27,8 @@ class ThreeSumFasterTest(unittest.TestCase):
     def test_should_be_able_to_run(self):
         three_sum_faster([])
 
-    # def test_should_return_empty_array_when_unable_to_find(self):
-    #     self.assertEquals([], three_sum_faster([]))
+    def test_should_return_empty_array_when_unable_to_find(self):
+        self.assertEquals([], three_sum_faster([]))
 
     def test_should_return_result_when_matched(self):
         self.assertEquals([[-1, 0, 1]], three_sum_faster([1, 0, -1]))
