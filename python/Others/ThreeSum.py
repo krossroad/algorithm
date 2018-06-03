@@ -19,6 +19,9 @@ def three_sum_faster(nums):
     result = set()
 
     for i in range(array_size - 1):
+        if i > 0 and nums[i] == nums[i - 1]:
+            continue
+
         head = i + 1
         tail = array_size - 1
 
